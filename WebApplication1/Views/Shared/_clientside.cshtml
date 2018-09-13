@@ -90,7 +90,7 @@ span.psw {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
-    top: 0;
+    top: 0; 
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -152,7 +152,7 @@ span.psw {
         <div class="culmn">
             <!--Home page style-->
 
-            <nav class="navbar navbar-default bootsnav navbar-fixed">
+            <nav class="navbar navbar-default bootsnav navbar">
                 <div class="navbar-top bg-grey fix">
                     <div class="container">
                         <div class="row">
@@ -171,8 +171,17 @@ span.psw {
                                         <li>
                                         <li>
                                             <i class="fa fa-sign-in" style="font-size:30px;color:darkgreen"></i>
-                                            <b><font size="5"><font color="black"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">@Html.ActionLink("登入", "Reg", "HOME")
-                                        </li></button></font></font></b></a></li>
+                                            <b>
+                                                <font size="5">
+                                                    <font color="black">
+                                                        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                                                            @Html.ActionLink("註冊", "Reg", "Home")
+                                                    </button>
+                                                </font>
+                                            </font>
+                                        </b>
+                                    
+                                    </li>
                                     </ul>
                                 </div>
                             </div>
