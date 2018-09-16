@@ -186,7 +186,7 @@ span.psw {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>  
                 </div>
                 <!-- Start Top Search -->
                 <div class="top-search">
@@ -845,7 +845,7 @@ span.psw {
 
                     <form class="modal-content animate" action="/action_page.php">
                         <div class="imgcontainer">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                             <img src="img_avatar2.png" alt="Avatar" class="avatar">
                         </div>
                         <div class="container">
@@ -863,6 +863,7 @@ span.psw {
                                 <option value="usa">桃園</option>
                                 <option value="en">新竹</option>
                                 <option value="jp">苗栗</option>
+
                             </td>
                             <tr>
                                 <td>生日：</td>
@@ -875,14 +876,12 @@ span.psw {
                             <input type="name" placeholder="輸入姓名" name="name" required>
 
                             <button type="login">註冊</button>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> 記住我
-                            </label>
+                          
                         </div>
 
                         <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">取消</button>
-                            <span class="psw">忘記 <a href="#">密碼?</a></span>
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">取消</button>
+                            
                         </div>
 
                     </form>
@@ -890,7 +889,7 @@ span.psw {
                 <script>
                     // Get the modal
                     var modal = document.getElementById('id01');
-
+                    var modal = document.getElementById('id02');
                     // When the user clicks anywhere outside of the modal, close it
                     window.onclick = function (event) {
                         if (event.target == modal) {
