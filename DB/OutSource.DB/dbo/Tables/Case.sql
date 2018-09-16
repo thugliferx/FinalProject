@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Case]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[CaseName] NVARCHAR (64) NOT NULL,
+	[CaseField] NVARCHAR (256) NOT NULL,
+	[StartDate] datetime NOT NULL,
+	[EndDate] datetime NOT NULL,
+	[Price] VARCHAR (64) NOT NULL,
+	[Address] NVARCHAR (256) NOT NULL,
+	[Requirs] NVARCHAR (256) NOT NULL,
+	[CreatID] INT NOT NULL PRIMARY KEY, 
+)

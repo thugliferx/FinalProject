@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Working]
+(
+	[CaseId] INT NOT NULL PRIMARY KEY,
+	[RecId] INT NOT NULL PRIMARY KEY,
+	[Done] NVARCHAR (16) NOT NULL,
+	[Asses] NVARCHAR (64)  NULL,
+	[Comment] NVARCHAR (64) NULL, 
+)

@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Certif]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[CerName] NVARCHAR (64) NOT NULL,
+	[CerField] NVARCHAR (64) NOT NULL,
+	[CerAppendix] NVARCHAR (256) NOT NULL,
+	[RecId] INT NOT NULL PRIMARY KEY,
+)
