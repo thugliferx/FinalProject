@@ -1,0 +1,46 @@
+﻿CREATE PROCEDURE [dbo].[usp_Create_SeqNo]
+(
+  @TYPE NVARCHAR(12) = '' ,   --申請類別
+  @PREFIX VARCHAR(20) = '' , -- 前置詞
+  @NO_LENGTH INT = 5 , --流水號長度
+  @COUNT INT = 1  --取得筆數
+)
+AS
+BEGIN
+	DECLARE @TO_NO INT
+
+--檢查流水號是否存在
+	IF NOT EXISTS ( SELECT  *
+					FROM    SYSTEM_SEQ_NO(NOLOCK)
+					WHERE   TYPE = @TYPE
+							AND PREFIX = @PREFIX )
+		BEGIN
+			INSERT  INTO SYSTEM_SEQ_NO
+			VALUES  ( @TYPE, @PREFIX, 0 )
+		END
+
+	BEGIN TRAN
+  --取出流水號並更新資料
+	UPDATE  SYSTEM_SEQ_NO
+	SET     CURRENT_NO = CURRENT_NO + @COUNT ,
+			@TO_NO = CURRENT_NO + @COUNT
+	WHERE   TYPE = @TYPE
+			AND PREFIX = @PREFIX
+	COMMIT TRAN
+--取出各個流水號
+;
+	WITH    SEQ_RESULT
+			  AS ( SELECT   @TO_NO AS NUM ,
+							@COUNT AS CNT
+				   UNION ALL
+				   SELECT   NUM - 1 ,
+							CNT - 1
+				   FROM     SEQ_RESULT
+				   WHERE    CNT > 1
+				 )
+		SELECT  FROM_NO = @PREFIX + RIGHT('0000000000'
+										  + CONVERT(NVARCHAR, Z.NUM),
+										  @NO_LENGTH)
+		FROM    SEQ_RESULT Z
+		ORDER BY Z.NUM
+END

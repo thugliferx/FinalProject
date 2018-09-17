@@ -71,5 +71,7 @@
     <Build Include="dbo\Tables\Read.sql" />
     <Build Include="dbo\Tables\Apply.sql" />
     <Build Include="dbo\Tables\Working.sql" />
+    <Build Include="usp_Create_SeqNo.sql" />
+    <Build Include="dbo\Tables\SYSTEM_SEQ_NO.sql" />
   </ItemGroup>
 </Project>
