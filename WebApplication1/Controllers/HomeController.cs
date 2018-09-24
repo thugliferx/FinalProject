@@ -23,5 +23,11 @@ namespace WebApplication1.Controllers
  
             return View();
         }
+
+        public ActionResult sendya()
+        {
+
+            return View();
+        }
     }
 }

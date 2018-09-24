@@ -170,6 +170,7 @@
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\plugins.css" />
     <Content Include="css\responsive.css" />
+    <Content Include="css\send.css" />
     <Content Include="css\slick\ajax-loader.gif" />
     <Content Include="css\slick\fonts\slick.svg" />
     <Content Include="css\slick\slick-theme.css" />
@@ -273,6 +274,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\receivecase.cshtml" />
     <Content Include="Views\Home\sendcase.cshtml" />
+    <Content Include="Views\Home\sendya.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
