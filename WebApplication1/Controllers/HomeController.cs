@@ -18,11 +18,15 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+
         public ActionResult sendcase()
         {
- 
+
             return View();
         }
+
+
+
 
         public ActionResult sendya()
         {

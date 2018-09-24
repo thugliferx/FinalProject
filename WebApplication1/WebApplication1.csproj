@@ -150,6 +150,8 @@
     <Compile Include="Areas\administrator\administratorAreaRegistration.cs" />
     <Compile Include="Areas\administrator\Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\receyaa1Controller.cs" />
+    <Compile Include="Controllers\receyaaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,11 +277,14 @@
     <Content Include="Views\Home\receivecase.cshtml" />
     <Content Include="Views\Home\sendcase.cshtml" />
     <Content Include="Views\Home\sendya.cshtml" />
+    <Content Include="Views\receyaa\cert.cshtml" />
+    <Content Include="Views\receyaa1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\administrator\Models\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
