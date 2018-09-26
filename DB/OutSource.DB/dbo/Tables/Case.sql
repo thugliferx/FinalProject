@@ -8,5 +8,6 @@
 	[Price] VARCHAR (64) NOT NULL,
 	[Address] NVARCHAR (256) NOT NULL,
 	[Requirs] NVARCHAR (256) NOT NULL,
-	[ID] INT NOT NULL, 
+	[CreatID] INT NOT NULL PRIMARY KEY, 
+	
 )

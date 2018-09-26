@@ -150,9 +150,15 @@
     <Compile Include="Areas\administrator\administratorAreaRegistration.cs" />
     <Compile Include="Areas\administrator\Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\receyaa1Controller.cs" />
+    <Compile Include="Controllers\receyaaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\DbContext.cs" />
+    <Compile Include="Models\DbSet.cs" />
+    <Compile Include="Models\UserContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +176,7 @@
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\plugins.css" />
     <Content Include="css\responsive.css" />
+    <Content Include="css\send.css" />
     <Content Include="css\slick\ajax-loader.gif" />
     <Content Include="css\slick\fonts\slick.svg" />
     <Content Include="css\slick\slick-theme.css" />
@@ -268,19 +275,19 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_clientside.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Reg.cshtml" />
     <Content Include="Views\Shared\_adminLayout.cshtml" />
-    <Content Include="Views\Register\Reg.cshtml" />
-    <Content Include="Views\Register\Registering.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\DD.cshtml" />
+    <Content Include="Views\Home\receivecase.cshtml" />
+    <Content Include="Views\Home\sendcase.cshtml" />
+    <Content Include="Views\Home\sendya.cshtml" />
+    <Content Include="Views\receyaa\cert.cshtml" />
+    <Content Include="Views\receyaa1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\administrator\Models\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

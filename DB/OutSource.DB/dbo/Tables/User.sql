@@ -1,7 +1,6 @@
-﻿CREATE TABLE [dbo].[Users]
+﻿CREATE TABLE [dbo].[User]
 (
 	[Id] VARCHAR NOT NULL PRIMARY KEY ,
-	[account number] NVARCHAR (64)  NOT NULL,
 	[Name] NVARCHAR (64)  NOT NULL,
 	[CellPhone] NVARCHAR (20) NOT NULL,
 	[Email] NVARCHAR (20) NOT NULL,
