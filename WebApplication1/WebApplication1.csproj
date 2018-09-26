@@ -170,7 +170,6 @@
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\plugins.css" />
     <Content Include="css\responsive.css" />
-    <Content Include="css\send.css" />
     <Content Include="css\slick\ajax-loader.gif" />
     <Content Include="css\slick\fonts\slick.svg" />
     <Content Include="css\slick\slick-theme.css" />
@@ -269,12 +268,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_clientside.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Reg.cshtml" />
     <Content Include="Views\Shared\_adminLayout.cshtml" />
+    <Content Include="Views\Register\Reg.cshtml" />
+    <Content Include="Views\Register\Registering.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\receivecase.cshtml" />
-    <Content Include="Views\Home\sendcase.cshtml" />
-    <Content Include="Views\Home\sendya.cshtml" />
+    <Content Include="Views\Home\DD.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
