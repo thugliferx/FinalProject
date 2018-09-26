@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_clientside.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+
+    $(document).ready(function () {
+        $.getJSON("Home/GetJson_Content_A_Md"),
+            function (data) {
+                S.each(data
+                    , function (index, p) {
+                        var html = "<tr>" +
+                            "<td>" + p.User_Name + "</td>" +
+                            "<td>" + p.account_number + "</td>" +
+                            "<td>" + (p.IsMale ? "male" : "female") + "</td>" +
+                            html + "</tr>";
+                        $("tbody").append(html);
+                    });
+            };
+
+
+    });
+
+</script>
+
+</head>
+<body>
+    <table id="Users" cellspacing="1">
+        <thead>
+            <tr>
+                <td>名字</td>
+                <td>帳號</td>
+                <td>性別</td>
+            </tr>
+        </thead>
+    </table>
+    </body>
+</html>
