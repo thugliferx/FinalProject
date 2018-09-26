@@ -9,5 +9,4 @@
 	[Address] NVARCHAR (256) NOT NULL,
 	[Requirs] NVARCHAR (256) NOT NULL,
 	[CreatID] INT NOT NULL PRIMARY KEY, 
-	
 )
