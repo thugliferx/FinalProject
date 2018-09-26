@@ -61,7 +61,7 @@
     <Folder Include="dbo\Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\Creater.sql" />
     <Build Include="dbo\Tables\Receiver.sql" />
     <Build Include="dbo\Tables\Case.sql" />

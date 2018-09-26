@@ -10,4 +10,5 @@
 	[CaseId],
 	[Id]
 	) ON [PRIMARY] 
+  
 )
