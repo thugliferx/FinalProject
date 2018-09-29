@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[usp_Create_SeqNo]
 (
   @TYPE NVARCHAR(12) = '' ,   --申請類別
-  @PREFIX VARCHAR(20) = 'Ａ' , -- 前置詞
+  @PREFIX VARCHAR(20) = '' , -- 前置詞
   @NO_LENGTH INT = 5 , --流水號長度
   @COUNT INT = 1  --取得筆數
 )
