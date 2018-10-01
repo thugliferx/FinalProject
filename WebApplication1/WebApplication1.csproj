@@ -249,6 +249,8 @@
     <Content Include="Areas\administrator\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\administrator\Views\Dashboard\About.cshtml" />
     <Content Include="Areas\administrator\Views\Dashboard\Contact.cshtml" />
+    <Content Include="Models\Ajax.cshtml" />
+    <Content Include="Models\Json.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -283,7 +285,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\administrator\Models\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
