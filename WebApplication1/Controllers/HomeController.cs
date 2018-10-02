@@ -25,8 +25,17 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        public ActionResult search()
+        {
 
+            return View();
+        }
 
+        public ActionResult people()
+        {
+
+            return View();
+        }
 
         public ActionResult sendya()
         {

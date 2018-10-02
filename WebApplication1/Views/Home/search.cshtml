@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_clientside.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+               .rwd-table {
+         background: #fff;
+         overflow: hidden;
+        }
+
+        .rwd-table tr:nth-of-type(2n){
+         background: #eee;
+        }
+        .rwd-table th,
+        .rwd-table td {
+         margin: 0.5em 1em;
+        }
+        .rwd-table {
+         min-width: 100%;
+        }
+
+        .rwd-table th {
+         display: none;
+        }
+
+        .rwd-table td {
+         display: block;
+        }
+
+        .rwd-table td:before {
+         content: attr(data-th) " : ";
+         font-weight: bold;
+         width: 6.5em;
+         display: inline-block;
+        }
+
+        .rwd-table th, .rwd-table td {
+         text-align: left;
+        }
+
+        .rwd-table th, .rwd-table td:before {
+         color: #D20B2A;
+         font-weight: bold;
+        }
+
+        @@media (min-width: 480px) {
+        .rwd-table td:before {
+         display: none;
+        }
+        .rwd-table th, .rwd-table td {
+         display: table-cell;
+         padding: 0.25em 0.5em;
+        }
+        .rwd-table th:first-child,
+        .rwd-table td:first-child {
+         padding-left: 0;
+        }
+        .rwd-table th:last-child,
+        .rwd-table td:last-child {
+         padding-right: 0;
+        }
+        .rwd-table th,
+        .rwd-table td {
+         padding: 1em !important;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <table class="rwd-table">
+        <tr>
+            <th>專案名稱</th>
+            <th>合適人才</th>
+            <th>幾人申請</th>
+            <th>幾人查看</th>
+        </tr>
+        <tr>
+            <td data-th="旅遊名稱">MVC專案</td>
+            <td data-th="出發日"><a href="@Url.Action("people", "Home")" >看更多</a></td>
+            <td data-th="機位">26</td>
+            <td data-th="可售">6</td>
+        </tr>
+
+        <tr>
+            <td data-th="旅遊名稱">遊戲設計</td>
+            <td data-th="出發日"><a href="@Url.Action("people", "Home")" >看更多</a></td>
+            <td data-th="機位">26</td>
+            <td data-th="可售">6</td>
+        </tr>
+
+        <tr>
+            <td data-th="旅遊名稱">網路行銷</td>
+            <td data-th="出發日"><a href="@Url.Action("people", "Home")" >看更多</a></td>
+            <td data-th="機位">26</td>
+            <td data-th="可售">6</td>
+        </tr>
+    </table>
+</body>
+</html>
