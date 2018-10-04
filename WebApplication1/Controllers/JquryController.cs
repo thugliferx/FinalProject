@@ -24,7 +24,6 @@ namespace WebApplication1.Controllers
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException ex)
             {
-
                 throw ex;
             }
             return Json("Registration Successful" , JsonRequestBehavior .AllowGet);
