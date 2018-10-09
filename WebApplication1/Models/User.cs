@@ -24,5 +24,6 @@ namespace WebApplication1.Models
         public string Address { get; set; }
         public System.DateTime Birth { get; set; }
         public string AuthenCard { get; set; }
+        public bool Isvalid { get; internal set; }
     }
 }
