@@ -205,6 +205,12 @@
     <Content Include="css\slick\slick.css" />
     <Content Include="css\slick\slick.js" />
     <Content Include="css\slick\slick.min.js" />
+    <Content Include="css\styles-2.css" />
+    <Content Include="css\styles-3.css" />
+    <Content Include="css\styles-4.css" />
+    <Content Include="css\styles-5.css" />
+    <Content Include="css\styles-6.css" />
+    <Content Include="css\styles.css" />
     <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\bootstrapThemesCo-icon.svg" />
@@ -225,6 +231,7 @@
     <Content Include="images\ltst-img-1.jpg" />
     <Content Include="images\ltst-img-2.jpg" />
     <Content Include="images\ltst-img-3.jpg" />
+    <Content Include="images\profile.jpg" />
     <Content Include="images\test-img1.jpg" />
     <Content Include="images\test-img2.jpg" />
     <Content Include="images\work-img1.jpg" />
@@ -241,12 +248,15 @@
     <Content Include="js\jquery.easypiechart.min.js" />
     <Content Include="js\jquery.magnific-popup.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\mains.js" />
+    <Content Include="js\min\mains-min.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\vendor\bootstrap.js" />
     <Content Include="js\vendor\bootstrap.min.js" />
     <Content Include="js\vendor\jquery-1.11.2.min.js" />
     <Content Include="js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
     <Content Include="js\vendor\npm.js" />
+    <Content Include="less\css\styles.css" />
     <Content Include="Models\Model_Save.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model_Save.edmx</DependentUpon>
@@ -257,6 +267,19 @@
       <DependentUpon>Model_Save.edmx</DependentUpon>
       <LastGenOutput>Model_Save.cs</LastGenOutput>
     </Content>
+    <Content Include="plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="plugins\bootstrap\js\npm.js" />
+    <Content Include="plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="plugins\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="plugins\jquery-1.11.3.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -292,6 +315,80 @@
     <Content Include="Models\Model_Save.edmx.diagram">
       <DependentUpon>Model_Save.edmx</DependentUpon>
     </Content>
+    <Content Include="less\default\base.less" />
+    <Content Include="less\default\mixins.less" />
+    <Content Include="less\default\responsive.less" />
+    <Content Include="less\default\styles.less" />
+    <Content Include="less\default\theme-default.less" />
+    <Content Include="less\theme-2\base.less" />
+    <Content Include="less\theme-2\mixins.less" />
+    <Content Include="less\theme-2\responsive.less" />
+    <Content Include="less\theme-2\styles.less" />
+    <Content Include="less\theme-2\theme-default.less" />
+    <Content Include="less\theme-3\base.less" />
+    <Content Include="less\theme-3\mixins.less" />
+    <Content Include="less\theme-3\responsive.less" />
+    <Content Include="less\theme-3\styles.less" />
+    <Content Include="less\theme-3\theme-default.less" />
+    <Content Include="less\theme-4\base.less" />
+    <Content Include="less\theme-4\mixins.less" />
+    <Content Include="less\theme-4\responsive.less" />
+    <Content Include="less\theme-4\styles.less" />
+    <Content Include="less\theme-4\theme-default.less" />
+    <Content Include="less\theme-5\base.less" />
+    <Content Include="less\theme-5\mixins.less" />
+    <Content Include="less\theme-5\responsive.less" />
+    <Content Include="less\theme-5\styles.less" />
+    <Content Include="less\theme-5\theme-default.less" />
+    <Content Include="less\theme-6\base.less" />
+    <Content Include="less\theme-6\mixins.less" />
+    <Content Include="less\theme-6\responsive.less" />
+    <Content Include="less\theme-6\styles.less" />
+    <Content Include="less\theme-6\theme-default.less" />
+    <Content Include="plugins\bootstrap\.editorconfig" />
+    <Content Include="plugins\bootstrap\.gitattributes" />
+    <Content Include="plugins\bootstrap\.gitignore" />
+    <Content Include="plugins\bootstrap\.hound.yml" />
+    <Content Include="plugins\bootstrap\.travis.yml" />
+    <Content Include="plugins\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="plugins\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="plugins\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="plugins\font-awesome\less\animated.less" />
+    <Content Include="plugins\font-awesome\less\bordered-pulled.less" />
+    <Content Include="plugins\font-awesome\less\core.less" />
+    <Content Include="plugins\font-awesome\less\fixed-width.less" />
+    <Content Include="plugins\font-awesome\less\font-awesome.less" />
+    <Content Include="plugins\font-awesome\less\icons.less" />
+    <Content Include="plugins\font-awesome\less\larger.less" />
+    <Content Include="plugins\font-awesome\less\list.less" />
+    <Content Include="plugins\font-awesome\less\mixins.less" />
+    <Content Include="plugins\font-awesome\less\path.less" />
+    <Content Include="plugins\font-awesome\less\rotated-flipped.less" />
+    <Content Include="plugins\font-awesome\less\stacked.less" />
+    <Content Include="plugins\font-awesome\less\variables.less" />
+    <Content Include="plugins\font-awesome\scss\font-awesome.scss" />
+    <Content Include="plugins\font-awesome\scss\_animated.scss" />
+    <Content Include="plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="plugins\font-awesome\scss\_core.scss" />
+    <Content Include="plugins\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="plugins\font-awesome\scss\_icons.scss" />
+    <Content Include="plugins\font-awesome\scss\_larger.scss" />
+    <Content Include="plugins\font-awesome\scss\_list.scss" />
+    <Content Include="plugins\font-awesome\scss\_mixins.scss" />
+    <Content Include="plugins\font-awesome\scss\_path.scss" />
+    <Content Include="plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="plugins\font-awesome\scss\_stacked.scss" />
+    <Content Include="plugins\font-awesome\scss\_variables.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -326,6 +423,8 @@
     <Content Include="Views\Home\people.cshtml" />
     <Content Include="Views\Home\Logon.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\user.cshtml" />
+    <Content Include="Views\Home\modify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

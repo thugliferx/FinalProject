@@ -45,5 +45,15 @@ namespace WebApplication1.Controllers
 
             return View();
         }
+        public ActionResult user()
+        {
+
+            return View();
+        }
+        public ActionResult modify()
+        {
+
+            return View();
+        }
     }
 }
