@@ -13,10 +13,10 @@ namespace WebApplication1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class OutSourceDBEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public OutSourceDBEntities()
+            : base("name=OutSourceDBEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace WebApplication1.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<User> Users { get; set; }
+        public DbSet<member> members { get; set; }
     }
 }

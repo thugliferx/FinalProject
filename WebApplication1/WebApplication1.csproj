@@ -156,30 +156,29 @@
     <Compile Include="Areas\administrator\administratorAreaRegistration.cs" />
     <Compile Include="Areas\administrator\Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JquryController.cs" />
     <Compile Include="Controllers\receyaa1Controller.cs" />
     <Compile Include="Controllers\receyaaController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\LogonController.cs" />
-    <Compile Include="Models\Model_Save.Context.cs">
+    <Compile Include="Models\member.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model_Save.Context.tt</DependentUpon>
+      <DependentUpon>Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model_Save.cs">
+    <Compile Include="Models\Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model_Save.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model_Save.Designer.cs">
+    <Compile Include="Models\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model_Save.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>Model_Save.tt</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -257,15 +256,15 @@
     <Content Include="js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
     <Content Include="js\vendor\npm.js" />
     <Content Include="less\css\styles.css" />
-    <Content Include="Models\Model_Save.Context.tt">
+    <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model_Save.edmx</DependentUpon>
-      <LastGenOutput>Model_Save.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model_Save.tt">
+    <Content Include="Models\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model_Save.edmx</DependentUpon>
-      <LastGenOutput>Model_Save.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="plugins\bootstrap\css\bootstrap-theme.css" />
     <Content Include="plugins\bootstrap\css\bootstrap-theme.min.css" />
@@ -308,13 +307,6 @@
     <Content Include="Areas\administrator\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\administrator\Views\Dashboard\About.cshtml" />
     <Content Include="Areas\administrator\Views\Dashboard\Contact.cshtml" />
-    <EntityDeploy Include="Models\Model_Save.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model_Save.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model_Save.edmx.diagram">
-      <DependentUpon>Model_Save.edmx</DependentUpon>
-    </Content>
     <Content Include="less\default\base.less" />
     <Content Include="less\default\mixins.less" />
     <Content Include="less\default\responsive.less" />
@@ -389,6 +381,13 @@
     <Content Include="plugins\font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="plugins\font-awesome\scss\_stacked.scss" />
     <Content Include="plugins\font-awesome\scss\_variables.scss" />
+    <EntityDeploy Include="Models\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -425,12 +424,12 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\user.cshtml" />
     <Content Include="Views\Home\modify.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\administrator\Models\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\Logon\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

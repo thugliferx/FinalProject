@@ -12,18 +12,12 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class member
     {
-        public string Id { get; set; }
-        public string account_number { get; set; }
-        public string Name { get; set; }
-        public string CellPhone { get; set; }
+        public int ID { get; set; }
+        public string Username { get; set; }
         public string Email { get; set; }
-        public string Pwd { get; set; }
-        public string City { get; set; }
-        public string Address { get; set; }
-        public System.DateTime Birth { get; set; }
-        public string AuthenCard { get; set; }
-        public bool Isvalid { get; internal set; }
+        public string Password { get; set; }
+        public Nullable<bool> IsValid { get; set; }
     }
 }

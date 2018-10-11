@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Register";
+﻿
+@{
+    ViewBag.Title = "Index";
     Layout = null;
 }
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
@@ -78,30 +79,20 @@
 <script>
     function SignUp() {
         $("#ShowModal").modal();
-        $("#message1").hide();
-        $("#message2").hide();
+        
     }
     function SaveForm() {
-        var name = $("#user").val();
-        var pwd = $("#Password").val();
-        var email = $("#Email").val();
-        return true;
-        if (name == "" || pwd == "" || email == "") {
-            $("#message1").hide();
-            $("#message2").show();
-            return false;
-        }
+        
         var data = $("#Registration").serialize();
         $.ajax({
             type: "post",
             data: data,
-            url: "/Home/SaveData",
+            url: "/Register/SaveData",
             success: function (result) {
                 alert(result);
-                $("#message1").show();
-                $("#message2").hide();
-                $("#Registration")[0].reset();
+               
             }
         });
     }
 </script>
+
