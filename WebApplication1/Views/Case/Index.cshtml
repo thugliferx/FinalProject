@@ -1,0 +1,88 @@
+﻿@model IEnumerable<WebApplication1.Models.CaseTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>發案明細</h2>
+
+<p>
+
+    @using (Html.BeginForm("SearchCaseName", "Case", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+<p>
+        Title: @Html.TextBox("searchcase")
+        <input type="submit" value="查詢" />
+    </p>
+    @Html.ActionLink("Create New", "Create")
+}
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Caseid)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CaseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CasePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Requirs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseField)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Caseid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CasePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Requirs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseField)
+                </td>
+                <td>
+                    @Html.ActionLink("編輯", "Edit", new { id = item.Caseid }) |
+
+                    @Html.ActionLink("刪除", "Delete", new { id = item.Caseid })
+
+                    <a href="@Url.Action("index", "FileUploader")" class="btn btn-block">申請</a>
+                </td>
+            </tr>
+        }
+
+    </table>

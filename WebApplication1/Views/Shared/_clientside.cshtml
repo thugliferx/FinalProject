@@ -154,28 +154,43 @@ span.psw {
 
             <nav class="navbar navbar-default bootsnav navbar">
                 <div class="navbar-top bg-grey fix">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="@Url.Action("Index", "Home")#home">
+                            <img src="~/images/logo3.png" class="logo" >
+                            <!--<img src="~/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+                        </a>
+                    </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="navbar-callus text-left ">
-                                    <font color=darkgreen size=5 face="微軟正黑體">
+                                    @*<font color=darkgreen size=5 face="微軟正黑體">
                                         <b>
                                             <marquee direction="right" align="center" height="55" scrollamount="10">觀迎來到我們官網 還沒有會員的趕快註冊吧~→→→→</marquee>
-                                    </font></b>
+                                    </font></b>*@
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="navbar-socail text-right sm-text-center">
                                     <ul class="list-inline">
-                                        <li><i class="fa fa-sign-in" style="font-size:30px;color:darkgreen"></i><b><font size="5"><font color="black"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">會員登入</button></font></font></b></a></li>
+                                        <li><i class="fa fa-sign-in" style="font-size:30px;color:darkgreen"></i><b><font size="5"><font color="black"><a href="@Url.Action("Login", "Account")" class="btn btn-block" style="width:auto;">會員登入</a></font></font></b></li>
                                         <li>
                                         <li>
 
                                             <b>
                                                 <font size="5">
                                                     <font color="black">
-                                        <li><i class="fa fa-sign-in" style="font-size:30px;color:darkgreen"></i><b><font size="5"><font color="black"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">註冊會員 </button></font></font></b></a></li>
+                                        <li><i class="fa fa-sign-in" style="font-size:30px;color:darkgreen"></i><b><font size="5"><font color="black"><a href="@Url.Action("Register", "Account")" class="btn btn-block" style="width:auto;">會員註冊</a></font></font></b></li>
+                                        
+                                            <ul class="nav navbar-nav navbar-right">
 
+                                                <li><a href="@Url.Action("Index", "Home")#home"><font size=4>首頁</font> </a></li>
+                                                <li><a href="@Url.Action("Index", "Home")#features"><font size=4>關於我們</font></a></li>
+                                                <li><a href="@Url.Action("Index", "Home")#business"><font size=4>我們提供的服務</font></a></li>
+                                                <li><a href="@Url.Action("Index", "Home")#test"><font size=4>我們的會員</font></a></li>
+                                                <li><a href="@Url.Action("Index", "Home")#contact"><font size=4>聯絡我們</font></a></li>
+                                            </ul>
+                                        </div>
                                         </button>
                                         </font>
                                         </font>
@@ -200,30 +215,11 @@ span.psw {
                 </div>
                 <!-- End Top Search -->
 
-                <div class="container">
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        </ul>
-                    </div>
                     <!-- Start Header Navigation -->
-                    <div class="navbar-header">     
-                        <a class="navbar-brand" href="@Url.Action("Index", "Home")#home">
-                            <img src="~/images/logo.png" class="logo" alt="">
-                            <!--<img src="~/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
-                        </a>
-                    </div>
+                   
                     <!-- End Header Navigation -->
                     <!-- navbar menu -->
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="@Url.Action("Index", "Home")#home">首頁</a></li>
-                            <li><a href="@Url.Action("Index", "Home")#features">關於我們</a></li>
-                            <li><a href="@Url.Action("Index", "Home")#business">我們提供的服務</a></li>
-                            <li><a href="@Url.Action("Index", "Home")#test">我們的客戶</a></li>
-                            <li><a href="@Url.Action("Index", "Home")#contact">聯絡我們</a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
+                   <!-- /.navbar-collapse -->
                 </div>
             </nav>
 
@@ -240,20 +236,13 @@ span.psw {
                         <div class="widget_area">
                             <div class="col-md-3">
                                 <div class="widget_item widget_about">
-                                    <h5 class="text-white">關於我們</h5>
-                                    <p class="m-top-20">
-                                        Lorem ipsum dolor sit amet consec tetur adipiscing elit
-                                        nulla aliquet pretium nisi in cursus
-                                        maecenas nec eleifen.
-                                    </p>
+                                   
                                     <div class="widget_ab_item m-top-30">
                                         <div class="item_icon"><i class="fa fa-location-arrow"></i></div>
                                         <div class="widget_ab_item_text">
                                             <h6 class="text-white">公司位置</h6>
                                             <p>
-                                                123 suscipit ipsum nam auctor
-                                                mauris dui, ac sollicitudin mauris,
-                                                Bandung
+                                               長庚大學
                                             </p>
                                         </div>
                                     </div>
@@ -268,7 +257,7 @@ span.psw {
                                         <div class="item_icon"><i class="fa fa-envelope-o"></i></div>
                                         <div class="widget_ab_item_text">
                                             <h6 class="text-white">電子郵件 :</h6>
-                                            <p>youremail@mail.com</p>
+                                            <p>cgu@mail.com</p>
                                         </div>
                                     </div>
                                 </div><!-- End off widget item -->
@@ -277,24 +266,23 @@ span.psw {
                                 <div class="widget_item widget_latest sm-m-top-50">
                                     <h5 class="text-white">最新消息</h5>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="~/images/ltst-img-1.jpg" alt="" /></div>
+                                        
                                         <div class="widget_latst_item_text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                            <a href="">21<sup>th</sup> July 2016</a>
+                                            <p>Steven成為贊助會員</p>
+                                            <a href="">31<sup>th</sup> Jan 2018</a>
                                         </div>
                                     </div>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="~/images/ltst-img-2.jpg" alt="" /></div>
+                                        
                                         <div class="widget_latst_item_text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                            <a href="">21<sup>th</sup> July 2016</a>
+                                            <p>Charles成為贊助會員</p>
+                                            <a href="">12<sup>th</sup> Nov 2018</a>
                                         </div>
                                     </div>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="~/images/ltst-img-3.jpg" alt="" /></div>
                                         <div class="widget_latst_item_text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                            <a href="">21<sup>th</sup> July 2016</a>
+                                            <p>Ray成為贊助會員</p>
+                                            <a href="">31<sup>th</sup> Dec 2018</a>
                                         </div>
                                     </div>
                                 </div><!-- End off widget item -->
@@ -303,12 +291,12 @@ span.psw {
                                 <div class="widget_item widget_service sm-m-top-50">
                                     <h5 class="text-white">最新公告</h5>
                                     <ul class="m-top-20">
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Web Design</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> User Interface Design</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> E- Commerce</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Web Hosting</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Themes</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Support Forums</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 賀!本站上線 免服務費</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 提供一個月廣告發案</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 網站更新公告</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 首周免費接案</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 提供網站BUG拿獎金</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 支援</a></li>
                                     </ul>
                                 </div><!-- End off widget item -->
                             </div><!-- End off col-md-3 -->
@@ -317,17 +305,11 @@ span.psw {
                                     <h5 class="text-white">訂閱我們！</h5>
                                     <form class="form-inline m-top-30">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Enter you Email">
+                                            <input type="email" class="form-control" placeholder="輸入你的Email">
                                             <button type="submit" class="btn text-center"><i class="fa fa-arrow-right"></i></button>
                                         </div>
                                     </form>
-                                    <div class="widget_brand m-top-40">
-                                        <a href="" class="text-uppercase">Your Logo</a>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consec tetur
-                                            adipiscing elit nulla aliquet pretium nisi in
-                                        </p>
-                                    </div>
+                                  
                                     <ul class="list-inline m-top-20">
                                         <li>-  <a href=""><i class="fa fa-facebook"></i></a></li>
                                         <li><a href=""><i class="fa fa-twitter"></i></a></li>

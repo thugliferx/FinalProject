@@ -64,9 +64,9 @@
     <Build Include="dbo\Tables\Users.sql" />
     <Build Include="dbo\Tables\Creater.sql" />
     <Build Include="dbo\Tables\Receiver.sql" />
-    <Build Include="dbo\Tables\Case.sql" />
+    <Build Include="dbo\Tables\OutSourceCase.sql" />
     <Build Include="dbo\Tables\AssesLetter.sql" />
-    <Build Include="dbo\Tables\Certif.sql" />
+    <Build Include="dbo\Tables\FileUpload_DB_Certif.sql" />
     <Build Include="dbo\Tables\Work.sql" />
     <Build Include="dbo\Tables\Read.sql" />
     <Build Include="dbo\Tables\Apply.sql" />

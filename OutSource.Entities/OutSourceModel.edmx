@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OutSource.DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Apply">
+          <Key>
+            <PropertyRef Name="CaseId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AssesLetter">
+          <Key>
+            <PropertyRef Name="AssesId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="AssesAppendix" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="AssesDis" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="AssesId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Creater">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Asses" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="FileUpload_DB_Certif">
+          <Key>
+            <PropertyRef Name="FileUpload_DB_CerId" />
+          </Key>
+          <Property Name="FileUpload_DB_CerId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileUpload_DB_CerField" Type="nvarchar" MaxLength="256" />
+          <Property Name="FileUpload_FilName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="UserId" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="OutSourceCase">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CaseField" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+          <Property Name="Price" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Requirs" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Read">
+          <Key>
+            <PropertyRef Name="CaseId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ViewTime" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Interst" Type="nvarchar" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Receiver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Asses" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CellPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pwd" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="64" />
+          <Property Name="Address" Type="nvarchar" MaxLength="256" />
+          <Property Name="Birth" Type="datetime" />
+          <Property Name="AuthenCard" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Work">
+          <Key>
+            <PropertyRef Name="WorkId" />
+          </Key>
+          <Property Name="WorkId" Type="int" Nullable="false" />
+          <Property Name="WorkName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="WorkAppentix" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="WorkDes" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Working">
+          <Key>
+            <PropertyRef Name="CaseId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Done" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="Creater's_Asses" Type="nvarchar" MaxLength="64" />
+          <Property Name="Creater's_Comment" Type="nvarchar" MaxLength="64" />
+          <Property Name="Receiver's_Asses" Type="nvarchar" MaxLength="64" />
+          <Property Name="Receiver's_Comment" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <Association Name="FK_Case_Apply_CaseId">
+          <End Role="OutSourceCase" Type="Self.OutSourceCase" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OutSourceCase">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Apply">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receiver_Apply_RecId">
+          <End Role="Receiver" Type="Self.Receiver" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receiver">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Apply">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OutSourceDBModelStoreContainer">
+          <EntitySet Name="Apply" EntityType="Self.Apply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssesLetter" EntityType="Self.AssesLetter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Creater" EntityType="Self.Creater" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FileUpload_DB_Certif" EntityType="Self.FileUpload_DB_Certif" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutSourceCase" EntityType="Self.OutSourceCase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Read" EntityType="Self.Read" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Receiver" EntityType="Self.Receiver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Work" EntityType="Self.Work" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Working" EntityType="Self.Working" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Case_Apply_CaseId" Association="Self.FK_Case_Apply_CaseId">
+            <End Role="OutSourceCase" EntitySet="OutSourceCase" />
+            <End Role="Apply" EntitySet="Apply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receiver_Apply_RecId" Association="Self.FK_Receiver_Apply_RecId">
+            <End Role="Receiver" EntitySet="Receiver" />
+            <End Role="Apply" EntitySet="Apply" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OutSource.DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AssesLetter">
+          <Key>
+            <PropertyRef Name="AssesId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="AssesAppendix" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssesDis" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssesId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Creater">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Asses" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Read">
+          <Key>
+            <PropertyRef Name="CaseId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ViewTime" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Interst" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Receiver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Asses" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Apply" Relationship="OutSource.DBModel.FK_Receiver_Apply_RecId" FromRole="Receiver" ToRole="Apply" />
+        </EntityType>
+        <EntityType Name="Work">
+          <Key>
+            <PropertyRef Name="WorkId" />
+          </Key>
+          <Property Name="WorkId" Type="Int32" Nullable="false" />
+          <Property Name="WorkName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WorkAppentix" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WorkDes" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Working">
+          <Key>
+            <PropertyRef Name="CaseId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Done" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Creater_s_Asses" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Creater_s_Comment" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Receiver_s_Asses" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Receiver_s_Comment" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="OutSourceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AssesLetter" EntityType="Self.AssesLetter" />
+          <EntitySet Name="Creater" EntityType="Self.Creater" />
+          <EntitySet Name="Read" EntityType="Self.Read" />
+          <EntitySet Name="Receiver" EntityType="Self.Receiver" />
+          <EntitySet Name="Work" EntityType="Self.Work" />
+          <EntitySet Name="Working" EntityType="Self.Working" />
+          <EntitySet Name="OutSourceCase" EntityType="OutSource.DBModel.OutSourceCase" />
+          <EntitySet Name="Apply" EntityType="OutSource.DBModel.Apply" />
+          <AssociationSet Name="FK_Case_Apply_CaseId" Association="OutSource.DBModel.FK_Case_Apply_CaseId">
+            <End Role="OutSourceCase" EntitySet="OutSourceCase" />
+            <End Role="Apply" EntitySet="Apply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receiver_Apply_RecId" Association="OutSource.DBModel.FK_Receiver_Apply_RecId">
+            <End Role="Receiver" EntitySet="Receiver" />
+            <End Role="Apply" EntitySet="Apply" />
+          </AssociationSet>
+          <EntitySet Name="FileUpload_DB_Certif" EntityType="OutSource.DBModel.FileUpload_DB_Certif" />
+          <EntitySet Name="Users" EntityType="OutSource.DBModel.Users" />
+        </EntityContainer>
+        <EntityType Name="OutSourceCase">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CaseField" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Price" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Requirs" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" />
+          <NavigationProperty Name="Apply" Relationship="OutSource.DBModel.FK_Case_Apply_CaseId" FromRole="OutSourceCase" ToRole="Apply" />
+        </EntityType>
+        <EntityType Name="Apply">
+          <Key>
+            <PropertyRef Name="CaseId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OutSourceCase" Relationship="OutSource.DBModel.FK_Case_Apply_CaseId" FromRole="Apply" ToRole="OutSourceCase" />
+          <NavigationProperty Name="Receiver" Relationship="OutSource.DBModel.FK_Receiver_Apply_RecId" FromRole="Apply" ToRole="Receiver" />
+        </EntityType>
+        <Association Name="FK_Case_Apply_CaseId">
+          <End Type="OutSource.DBModel.OutSourceCase" Role="OutSourceCase" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="OutSource.DBModel.Apply" Role="Apply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OutSourceCase">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Apply">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receiver_Apply_RecId">
+          <End Type="OutSource.DBModel.Receiver" Role="Receiver" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="OutSource.DBModel.Apply" Role="Apply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receiver">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Apply">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FileUpload_DB_Certif">
+          <Key>
+            <PropertyRef Name="FileUpload_DB_CerId" />
+          </Key>
+          <Property Name="FileUpload_DB_CerId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileUpload_DB_CerField" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FileUpload_FilName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CellPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pwd" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Birth" Type="DateTime" Precision="3" />
+          <Property Name="AuthenCard" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OutSourceDBModelStoreContainer" CdmEntityContainer="OutSourceEntities">
+          <EntitySetMapping Name="AssesLetter">
+            <EntityTypeMapping TypeName="OutSource.DBModel.AssesLetter">
+              <MappingFragment StoreEntitySet="AssesLetter">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AssesAppendix" ColumnName="AssesAppendix" />
+                <ScalarProperty Name="AssesDis" ColumnName="AssesDis" />
+                <ScalarProperty Name="AssesId" ColumnName="AssesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Creater">
+            <EntityTypeMapping TypeName="OutSource.DBModel.Creater">
+              <MappingFragment StoreEntitySet="Creater">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Asses" ColumnName="Asses" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Read">
+            <EntityTypeMapping TypeName="OutSource.DBModel.Read">
+              <MappingFragment StoreEntitySet="Read">
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ViewTime" ColumnName="ViewTime" />
+                <ScalarProperty Name="Interst" ColumnName="Interst" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receiver">
+            <EntityTypeMapping TypeName="OutSource.DBModel.Receiver">
+              <MappingFragment StoreEntitySet="Receiver">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Asses" ColumnName="Asses" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Work">
+            <EntityTypeMapping TypeName="OutSource.DBModel.Work">
+              <MappingFragment StoreEntitySet="Work">
+                <ScalarProperty Name="WorkId" ColumnName="WorkId" />
+                <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+                <ScalarProperty Name="WorkAppentix" ColumnName="WorkAppentix" />
+                <ScalarProperty Name="WorkDes" ColumnName="WorkDes" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Working">
+            <EntityTypeMapping TypeName="OutSource.DBModel.Working">
+              <MappingFragment StoreEntitySet="Working">
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Done" ColumnName="Done" />
+                <ScalarProperty Name="Creater_s_Asses" ColumnName="Creater's_Asses" />
+                <ScalarProperty Name="Creater_s_Comment" ColumnName="Creater's_Comment" />
+                <ScalarProperty Name="Receiver_s_Asses" ColumnName="Receiver's_Asses" />
+                <ScalarProperty Name="Receiver_s_Comment" ColumnName="Receiver's_Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutSourceCase">
+            <EntityTypeMapping TypeName="OutSource.DBModel.OutSourceCase">
+              <MappingFragment StoreEntitySet="OutSourceCase">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Requirs" ColumnName="Requirs" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="CaseField" ColumnName="CaseField" />
+                <ScalarProperty Name="CaseName" ColumnName="CaseName" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Apply">
+            <EntityTypeMapping TypeName="OutSource.DBModel.Apply">
+              <MappingFragment StoreEntitySet="Apply">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FileUpload_DB_Certif">
+            <EntityTypeMapping TypeName="OutSource.DBModel.FileUpload_DB_Certif">
+              <MappingFragment StoreEntitySet="FileUpload_DB_Certif">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FileUpload_FilName" ColumnName="FileUpload_FilName" />
+                <ScalarProperty Name="FileUpload_DB_CerField" ColumnName="FileUpload_DB_CerField" />
+                <ScalarProperty Name="FileUpload_DB_CerId" ColumnName="FileUpload_DB_CerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="OutSource.DBModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="AuthenCard" ColumnName="AuthenCard" />
+                <ScalarProperty Name="Birth" ColumnName="Birth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

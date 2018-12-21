@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>請上傳您的證書以及其他能力證明文件</h2>
+
+<form action="@Url.Action("Upload","FileUploader")" method="post" enctype="multipart/form-data">
+    <label for="file1">證書</label>
+    <input type="file" name="files" id="file1" />
+
+    <label for="file2">其他證明文件</label>
+    <input type="file" name="files" id="file2" />
+   
+
+    <a href="@Url.Action("user", "Home")" type="submit">點選這邊</a>
+
+
+</form>

@@ -5,6 +5,7 @@
     "dnxcore50.app": {}
   },
   "dependencies": {
+    "Microsoft.jQuery.Unobtrusive.Validation": "3.2.11",
     "Microsoft.NETCore": "5.0.0",
     "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
   },

@@ -37,6 +37,7 @@
         <div class="sidebar-wrapper">
             <div class="profile-container">
                 <img class="profile" src="~/images/profile.jpg" alt="" />
+
                 <h1 class="name">彥廷</h1>
                 <a href="@Url.Action("modify", "Home")" class="btn btn-block"><h3 class="tagline">修改資料</h3></a>
             </div><!--//profile-container-->
@@ -65,6 +66,11 @@
                 </div><!--//item-->
             </div><!--//education-container-->
 
+            <div class="languages-container container-block">
+                <img src="@Url.Action("Download", "FileUploader", new { picId = 12})" alt="Alternate Text" />
+                <img src="@Url.Action("Download", "FileUploader", new { picId = 13})" alt="Alternate Text" />
+              
+            </div><!--//interests-->
             <div class="languages-container container-block">
                 <h2 class="container-block-title">Languages</h2>
                 <ul class="list-unstyled interests-list">
